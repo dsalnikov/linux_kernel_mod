@@ -1,0 +1,1 @@
+cmd_/home/lamazavr/kernel_module/blablamod_01/blablamod.ko := ld -r -m elf_x86_64 -T ./scripts/module-common.lds --build-id  -o /home/lamazavr/kernel_module/blablamod_01/blablamod.ko /home/lamazavr/kernel_module/blablamod_01/blablamod.o /home/lamazavr/kernel_module/blablamod_01/blablamod.mod.o
