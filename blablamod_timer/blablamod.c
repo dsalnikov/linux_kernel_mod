@@ -16,23 +16,23 @@ static int __init blablamod_init( void ) {
     
     printk(KERN_NOTICE "BlablaModule loaded!\n"); 
    
-	// my_timer, function, data
-	setup_timer( &my_timer, my_timer_callback, 10 );
-
-	printk(KERN_NOTICE "Starting timer to fire in 200ms (%ld)\n", jiffies);
-	ret = mod_timer(&my_timer, jiffies + msecs_to_jiffies(200));
-	if (ret)
-		printk(KERN_ALERT "Error in mod_timer\n");
+    // my_timer, function, data
+    setup_timer( &my_timer, my_timer_callback, 10 );
+    
+    printk(KERN_NOTICE "Starting timer to fire in 200ms (%ld)\n", jiffies);
+    ret = mod_timer(&my_timer, jiffies + msecs_to_jiffies(200));
+    if (ret)
+    	printk(KERN_ALERT "Error in mod_timer\n");
 
    return 0; 
 }
 
 static void __exit blablamod_exit( void ) { 
-	int ret = del_timer( &my_timer );
-	if (ret)
-		printk(KERN_ALERT "The timer is still in use...\n");
+    int ret = del_timer( &my_timer );
+    if (ret)
+        printk(KERN_ALERT "The timer is still in use...\n");
 
-   printk(KERN_NOTICE "BlablaModule unloaded!\n" ); 
+    printk(KERN_NOTICE "BlablaModule unloaded!\n" ); 
 }
 
 module_init( blablamod_init ); 
