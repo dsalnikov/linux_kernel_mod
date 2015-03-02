@@ -1,0 +1,1 @@
+cmd_/home/pi/src/linux_kernel_mod/rpimod/blablamod.ko := ld -EL -r  -T ./scripts/module-common.lds --build-id  -o /home/pi/src/linux_kernel_mod/rpimod/blablamod.ko /home/pi/src/linux_kernel_mod/rpimod/blablamod.o /home/pi/src/linux_kernel_mod/rpimod/blablamod.mod.o
