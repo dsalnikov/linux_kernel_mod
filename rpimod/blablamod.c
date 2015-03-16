@@ -35,7 +35,7 @@ static int __init blablamod_init( void ) {
     if (!gpio_is_valid(gpio_pin))
     {
         printk(KERN_ALERT " GPIO number %d not valid.\n", gpio_pin);
-        return 1;
+        return -1;
     }
     
     ret = gpio_request(gpio_pin,"LED");
@@ -60,12 +60,6 @@ static void __exit blablamod_exit( void ) {
     int ret;
     printk(KERN_NOTICE "Blablatogle module unloaded!\n" ); 
 
-    if (gpio_is_valid(gpio_pin))
-    {
-        gpio_direction_output(gpio_pin, 0);
-        gpio_set_value(gpio_pin, 0);
-    }
-    
     gpio_free(led.gpio);
     ret = del_timer( &my_timer );
     if (ret)
