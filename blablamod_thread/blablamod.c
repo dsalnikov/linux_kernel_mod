@@ -7,7 +7,7 @@
 
 #include "blablamod.h" 
 
-struct task_struct *task;
+static struct task_struct *task;
 static int data = 0x55;
 
 int thread_function(void *data)
