@@ -8,3 +8,4 @@ This is step by step linux kernel modules programming guide.
 5. blablamod_thread - Kernel thread using example
 6. blablamod_timer - Kernel timer using example
 7. rpi_interrupt - GPIO interrupt on Raspberry Pi
+8. blablai2c - I2C device driver example 
